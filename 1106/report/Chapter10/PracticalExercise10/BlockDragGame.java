@@ -62,7 +62,6 @@ public class BlockDragGame extends JFrame {
 
         @Override
         public void mouseDragged(MouseEvent e) {
-            // 드래그 중인 라벨(Component)을 가져옴
             Component label = (Component) e.getSource();
 
             int newX = label.getX() + e.getX() - offset.x;
@@ -76,3 +75,4 @@ public class BlockDragGame extends JFrame {
         new BlockDragGame();
     }
 }
+

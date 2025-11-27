@@ -15,7 +15,7 @@ public class JDBC_Ex1 {
             Class.forName("com.mysql.cj.jdbc.Driver"); // MySQL 드라이버 로드
             conn = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/sampledb", "root", "1234"); 
-            System.out.println("DB 연결 완료 ✅");
+            System.out.println("DB 연결 완료");
             
             // --- 반복 시작 ---
             while (true) {
@@ -68,7 +68,7 @@ public class JDBC_Ex1 {
                     
                     int updateCount = stmt.executeUpdate(updateSql);
                     
-                    System.out.println("✅ 업데이트 완료! 총 " + updateCount + "개의 레코드가 수정되었습니다.");
+                    System.out.println("업데이트 완료! 총 " + updateCount + "개의 레코드가 수정되었습니다.");
                     
                 // 3. INSERT 기능 (삽입)
                 } else if (selection == 3) {
@@ -79,7 +79,7 @@ public class JDBC_Ex1 {
                     
                     int insertCount = stmt.executeUpdate(insertSql);
                     
-                    System.out.println("➕ 데이터 삽입 완료! 총 " + insertCount + "개의 레코드가 추가되었습니다.");
+                    System.out.println("데이터 삽입 완료! 총 " + insertCount + "개의 레코드가 추가되었습니다.");
                     
                 // 4. DELETE 기능 (삭제)
                 } else if (selection == 4) {
@@ -92,7 +92,7 @@ public class JDBC_Ex1 {
                     // 쿼리 실행 및 삭제된 행의 수(count) 반환
                     int deleteCount = stmt.executeUpdate(deleteSql);
                     
-                    System.out.println("🗑️ 데이터 삭제 완료! 총 " + deleteCount + "개의 레코드가 삭제되었습니다.");
+                    System.out.println("데이터 삭제 완료! 총 " + deleteCount + "개의 레코드가 삭제되었습니다.");
                     
                 } else {
                     System.out.println("잘못된 선택입니다. 다시 입력해주세요.");
@@ -101,9 +101,9 @@ public class JDBC_Ex1 {
             } // --- 반복 종료 ---
 
         } catch (ClassNotFoundException e) {
-            System.out.println("JDBC 드라이버 로드 에러 ❌");
+            System.out.println("JDBC 드라이버 로드 에러");
         } catch (SQLException e) {
-            System.out.println("DB 연결 또는 쿼리 실행 에러 ❌");
+            System.out.println("DB 연결 또는 쿼리 실행 에러");
             e.printStackTrace();
         } finally {
             // 자원 해제
@@ -117,4 +117,5 @@ public class JDBC_Ex1 {
             }
         }
     }
+
 }
